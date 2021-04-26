@@ -102,60 +102,70 @@ public class SaleListService {
     private JSONArray filterHotDeals(JSONObject saleProducts) {
         JSONArray products = (JSONArray) saleProducts.get("products");
         JSONArray hotDeals = new JSONArray();
-        Integer productSize = products.size();
-        int hotDealsLength;
+        try {
+            Integer productSize = products.size();
+            int hotDealsLength;
 
-        List<JSONObject> jsonList = new ArrayList<JSONObject>();
-        for (int i = 0; i < products.size(); i++) {
-            jsonList.add((JSONObject) products.get(i));
-        }
-
-        Collections.sort( jsonList, new Comparator<JSONObject>() {
-
-            public int compare(JSONObject a, JSONObject b) {
-
-                String valA =  a.get("rating").toString();
-                String valB =  b.get("rating").toString();
-
-
-                return valB.compareTo(valA);
+            List<JSONObject> jsonList = new ArrayList<JSONObject>();
+            for (int i = 0; i < products.size(); i++) {
+                jsonList.add((JSONObject) products.get(i));
             }
-        });
 
-        // Get top 5 hot deals, or all deals if less than 5
-        if (productSize >= 5){
-            hotDealsLength = 5;
-        } else {
-            hotDealsLength = productSize;
+            Collections.sort(jsonList, new Comparator<JSONObject>() {
+
+                public int compare(JSONObject a, JSONObject b) {
+
+                    String valA = a.get("rating").toString();
+                    String valB = b.get("rating").toString();
+
+
+                    return valB.compareTo(valA);
+                }
+            });
+
+            // Get top 5 hot deals, or all deals if less than 5
+            if (productSize >= 5) {
+                hotDealsLength = 5;
+            } else {
+                hotDealsLength = productSize;
+            }
+
+            for (int i = 0; i < hotDealsLength; i++) {
+                hotDeals.add(jsonList.get(i));
+            }
+
+            return hotDeals;
+        } catch (NullPointerException e){
+            e.printStackTrace();
         }
-
-        for (int i = 0; i < hotDealsLength; i++) {
-            hotDeals.add(jsonList.get(i));
-        }
-
-        return hotDeals;
+        return new JSONArray();
     }
 
     // Get Total Ratings for each Wishlist Category
     private HashMap<String, Double> getWishlistTotals(JSONObject wishlist, ArrayList<String> categories) {
         HashMap<String, Integer> wishlistCategoryTotals = new HashMap<>();
         JSONArray products = (JSONArray) wishlist.get("products");
-        int length = products.size();
+        try {
+            int length = products.size();
 
-        for (String category : categories) {
-            wishlistCategoryTotals.put(category, 0);
+            for (String category : categories) {
+                wishlistCategoryTotals.put(category, 0);
+            }
+
+            for (Object product : products) {
+                JSONObject obj = (JSONObject) product;
+                String cat = (String) obj.get("category");
+                int count = wishlistCategoryTotals.containsKey(cat) ? wishlistCategoryTotals.get(cat) : 0;
+                wishlistCategoryTotals.put(cat, count + 1);
+            }
+
+            HashMap<String, Double> wishlistCategoryAverages = getWishlistAverages(wishlistCategoryTotals, length);
+
+            return wishlistCategoryAverages;
+        } catch (NullPointerException e) {
+            e.printStackTrace();
         }
-
-        for (Object product : products) {
-            JSONObject obj = (JSONObject) product;
-            String cat = (String) obj.get("category");
-            int count = wishlistCategoryTotals.containsKey(cat) ? wishlistCategoryTotals.get(cat) : 0;
-            wishlistCategoryTotals.put(cat, count + 1);
-        }
-
-        HashMap<String, Double> wishlistCategoryAverages = getWishlistAverages(wishlistCategoryTotals, length);
-
-        return wishlistCategoryAverages;
+        return new HashMap<String, Double>();
     }
 
     // change count of each category in wishlist to a scale of 0-5 for even combination with my orders ratings (also 0-5)
@@ -174,24 +184,29 @@ public class SaleListService {
 
     // Get Ratings for each Category in My Orders
     private HashMap<String, Double> getCategoryRatings(JSONObject myOrders, ArrayList<String> categories){
-        JSONArray products = (JSONArray) myOrders.get("products");
-        HashMap<String, Integer> categoryRatings = new HashMap<>();
-        HashMap<String, Integer> categoryLengths = new HashMap<>();
+        try {
+            JSONArray products = (JSONArray) myOrders.get("products");
+            HashMap<String, Integer> categoryRatings = new HashMap<>();
+            HashMap<String, Integer> categoryLengths = new HashMap<>();
 
-        // Total Rating for each category
-        for (Object product: products){
-            JSONObject obj = (JSONObject) product;
-            String cat = (String) obj.get("category");
-            Integer rating = ((Long) obj.get("rating")).intValue();
-            int count = categoryRatings.containsKey(cat) ? categoryRatings.get(cat) : 0;
-            categoryRatings.put(cat, count + rating);
-            int length = categoryLengths.containsKey(cat) ? categoryLengths.get(cat) : 0;
-            categoryLengths.put(cat, length + 1);
+            // Total Rating for each category
+            for (Object product : products) {
+                JSONObject obj = (JSONObject) product;
+                String cat = (String) obj.get("category");
+                Integer rating = ((Long) obj.get("rating")).intValue();
+                int count = categoryRatings.containsKey(cat) ? categoryRatings.get(cat) : 0;
+                categoryRatings.put(cat, count + rating);
+                int length = categoryLengths.containsKey(cat) ? categoryLengths.get(cat) : 0;
+                categoryLengths.put(cat, length + 1);
+            }
+
+            HashMap<String, Double> categoryAverages = getCategoryAverages(categoryRatings, categoryLengths);
+
+            return categoryAverages;
+        } catch (NullPointerException e){
+            e.printStackTrace();
         }
-
-        HashMap<String, Double> categoryAverages = getCategoryAverages(categoryRatings, categoryLengths);
-
-        return categoryAverages;
+        return new HashMap<String, Double>();
     }
 
     // Get Category Average Ratings from My Orders
