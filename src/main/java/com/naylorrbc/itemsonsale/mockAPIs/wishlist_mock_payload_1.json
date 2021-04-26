@@ -1,0 +1,25 @@
+{
+	"userId": 1,
+	"products": [
+		{
+			"productId": 5,
+			"productName": "All Clad Stock Pot",
+			"category": "Kitchen"
+		},
+		{
+			"productId": 6,
+			"productName": "Titleist Pro V1 Golf Balls (3 Pack)",
+			"category": "Sports"
+		},
+		{
+			"productId": 7,
+			"productName": "IPhone Lightning Charging Cable",
+			"category": "Electronics"
+		},
+		{
+			"productId": 8,
+			"productName": "Victorinox Chef's Knife",
+			"category": "Kitchen"
+		}
+	]
+}

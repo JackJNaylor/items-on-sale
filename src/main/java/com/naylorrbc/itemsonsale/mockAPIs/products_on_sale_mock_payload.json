@@ -1,0 +1,140 @@
+{
+	"products": [
+		{
+			"productId": 1,
+			"productName": "Tennis Balls",
+			"rating": 3.2,
+			"regularPrice": 11,
+			"salePrice": 9,
+			"category": "Sports"
+		},
+		{
+			"productId": 2,
+			"productName": "Bose Headphones",
+			"rating": 3.7,
+			"regularPrice": 350,
+			"salePrice": 299,
+			"category": "Electronics"
+		},
+		{
+			"productId": 3,
+			"productName": "Nespresso Coffee Machine",
+			"rating": 5,
+			"regularPrice": 289,
+			"salePrice": 249,
+			"category": "Kitchen"
+		},
+		{
+			"productId": 4,
+			"productName": "Wilson Basketball",
+			"rating": 4.3,
+			"regularPrice": 32,
+			"salePrice": 24,
+			"category": "Sports"
+		},
+		{
+			"productId": 5,
+			"productName": "All Clad Stock Pot",
+			"rating": 3.2,
+			"regularPrice": 299,
+			"salePrice": 199,
+			"category": "Kitchen"
+		},
+		{
+			"productId": 6,
+			"productName": "Titleist Pro V1 Golf Balls (3 Pack)",
+			"rating": 3.2,
+			"regularPrice": 15,
+			"salePrice": 13,
+			"category": "Sports"
+		},
+		{
+			"productId": 7,
+			"productName": "IPhone Lightning Charging Cable",
+			"rating": 3.2,
+			"regularPrice": 29,
+			"salePrice": 24,
+			"category": "Electronics"
+		},
+		{
+			"productId": 8,
+			"productName": "Victorinox Chef's Knife",
+			"rating": 3.2,
+			"regularPrice": 35,
+			"salePrice": 29,
+			"category": "Kitchen"
+		},
+		{
+			"productId": 9,
+			"productName": "Soccer Ball",
+			"rating": 3.7,
+			"regularPrice": 15,
+			"salePrice": 8,
+			"category": "Sports"
+		},
+		{
+			"productId": 10,
+			"productName": "Settlers of Catan",
+			"rating": 4.6,
+			"regularPrice": 30,
+			"salePrice": 25,
+			"category": "Board Games"
+		},
+		{
+			"productId": 11,
+			"productName": "Guitar",
+			"rating": 4.4,
+			"regularPrice": 80,
+			"salePrice": 65,
+			"category": "Music"
+		},
+		{
+			"productId": 12,
+			"productName": "Ukulele",
+			"rating": 3.3,
+			"regularPrice": 60,
+			"salePrice": 49,
+			"category": "Music"
+		},
+		{
+			"productId": 13,
+			"productName": "Monopoly",
+			"rating": 4.5,
+			"regularPrice": 40,
+			"salePrice": 36,
+			"category": "Board Games"
+		},
+		{
+			"productId": 14,
+			"productName": "Air Fryer",
+			"rating": 4.2,
+			"regularPrice": 75,
+			"salePrice": 60,
+			"category": "Kitchen"
+		},
+		{
+			"productId": 15,
+			"productName": "Mason Jar (6 Pack)",
+			"rating": 2.6,
+			"regularPrice": 15,
+			"salePrice": 12,
+			"category": "Kitchen"
+		},
+		{
+			"productId": 16,
+			"productName": "Baseball Glove",
+			"rating": 3.7,
+			"regularPrice": 25,
+			"salePrice": 20,
+			"category": "Sports"
+		},
+		{
+			"productId": 17,
+			"productName": "Dart Board",
+			"rating": 3.4,
+			"regularPrice": 60,
+			"salePrice": 55,
+			"category": "Sports"
+		}
+	]
+}

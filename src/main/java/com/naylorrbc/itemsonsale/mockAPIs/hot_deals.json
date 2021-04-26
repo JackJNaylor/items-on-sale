@@ -1,0 +1,58 @@
+{
+	"products": [
+		{
+			"productId": 9,
+			"productName": "Soccer Ball",
+			"rating": 3.7,
+			"category": "Sports"
+		},
+		{
+			"productId": 10,
+			"productName": "Settlers of Catan",
+			"rating": 4.6,
+			"category": "Board Games"
+		},
+		{
+			"productId": 11,
+			"productName": "Guitar",
+			"rating": 4.4,
+			"category": "Music"
+		},
+		{
+			"productId": 12,
+			"productName": "Ukulele",
+			"rating": 3.3,
+			"category": "Music"
+		},
+		{
+			"productId": 13,
+			"productName": "Monopoly",
+			"rating": 4.5,
+			"category": "Board Games"
+		},
+		{
+			"productId": 14,
+			"productName": "Air Fryer",
+			"rating": 4.2,
+			"category": "Kitchen"
+		},
+		{
+			"productId": 15,
+			"productName": "Mason Jar (6 Pack)",
+			"rating": 2.6,
+			"category": "Kitchen"
+		},
+		{
+			"productId": 16,
+			"productName": "Baseball Glove",
+			"rating": 3.7,
+			"category": "Sports"
+		},
+		{
+			"productId": 17,
+			"productName": "Dart Board",
+			"rating": 3.4,
+			"category": "Sports"
+		}
+	]
+}

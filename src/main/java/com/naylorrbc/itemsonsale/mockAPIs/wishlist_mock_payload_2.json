@@ -1,0 +1,25 @@
+{
+	"userId": 2,
+	"products": [
+		{
+			"productId": 4,
+			"productName": "Wilson Basketball",
+			"category": "Sports"
+		},
+		{
+			"productId": 10,
+			"productName": "Settlers of Catan",
+			"category": "Board Games"
+		},
+		{
+			"productId": 12,
+			"productName": "Ukulele",
+			"category": "Music"
+		},
+		{
+			"productId": 8,
+			"productName": "Victorinox Chef's Knife",
+			"category": "Kitchen"
+		}
+	]
+}

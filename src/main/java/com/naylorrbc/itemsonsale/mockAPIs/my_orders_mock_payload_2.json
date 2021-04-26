@@ -1,0 +1,35 @@
+{
+	"userId": 2,
+	"products": [
+		{
+			"productId": 1,
+			"productName": "Tennis Balls",
+			"rating": 3,
+			"category": "Sports"
+		},
+		{
+			"productId": 15,
+			"productName": "Mason Jar (6 Pack)",
+			"rating": 1,
+			"category": "Kitchen"
+		},
+		{
+			"productId": 13,
+			"productName": "Monopoly",
+			"rating": 3,
+			"category": "Board Games"
+		},
+		{
+			"productId": 16,
+			"productName": "Baseball Glove",
+			"rating": 4,
+			"category": "Sports"
+		},
+		{
+			"productId": 11,
+			"productName": "Guitar",
+			"rating": 4,
+			"category": "Music"
+		}
+	]
+}

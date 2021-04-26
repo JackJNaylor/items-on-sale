@@ -1,0 +1,35 @@
+{
+	"userId": 1,
+	"products": [
+		{
+			"productId": 1,
+			"productName": "Tennis Balls",
+			"rating": 3,
+			"category": "Sports"
+		},
+		{
+			"productId": 2,
+			"productName": "Bose Headphones",
+			"rating": 4,
+			"category": "Electronics"
+		},
+		{
+			"productId": 3,
+			"productName": "Nespresso Coffee Machine",
+			"rating": 5,
+			"category": "Kitchen"
+		},
+		{
+			"productId": 4,
+			"productName": "Wilson Basketball",
+			"rating": 4,
+			"category": "Sports"
+		},
+		{
+			"productId": 11,
+			"productName": "Guitar",
+			"rating": 4,
+			"category": "Music"
+		}
+	]
+}
