@@ -39,8 +39,10 @@ public class SaleListService {
         // Combine orders and wishlist category ratings maps and sort by highest rated category
         HashMap<String, Double> ordersWishlistCategories = combineHashMaps(ordersCategoryAverages, wishlistCategoryTotals);
 
+        // Sort Categories from most to least relevant
         LinkedHashMap<String, Double> sortedCategories = sortByValue(ordersWishlistCategories);
 
+        // Generate recommended products list in order of relevant categories
         JSONArray recommendedProducts = getRecommendations(sortedCategories, saleProducts);
 
         SaleList saleList = new SaleList(
@@ -52,6 +54,7 @@ public class SaleListService {
 
     }
 
+    // Get recommendations by adding sale products to json array in order of most relevant categories
     private JSONArray getRecommendations(LinkedHashMap<String, Double> sortedCategories, JSONObject saleProducts) {
         JSONArray products = (JSONArray) saleProducts.get("products");
         JSONArray recommendedProducts = new JSONArray();
@@ -70,6 +73,7 @@ public class SaleListService {
         return recommendedProducts;
     }
 
+    // combine two hashmaps to get average rating between wishlist and previous orders
     private HashMap<String, Double> combineHashMaps(HashMap<String, Double> ordersCategoryAverages, HashMap<String, Double> wishlistCategoryTotals) {
         HashMap<String, Double> combinedMap = new HashMap<>();
         HashSet<String> combinedKeys = new HashSet<>();
@@ -101,7 +105,6 @@ public class SaleListService {
         Integer productSize = products.size();
         int hotDealsLength;
 
-//        JSONArray sortedJsonArray = new JSONArray();
         List<JSONObject> jsonList = new ArrayList<JSONObject>();
         for (int i = 0; i < products.size(); i++) {
             jsonList.add((JSONObject) products.get(i));
@@ -119,6 +122,7 @@ public class SaleListService {
             }
         });
 
+        // Get top 5 hot deals, or all deals if less than 5
         if (productSize >= 5){
             hotDealsLength = 5;
         } else {
@@ -154,6 +158,7 @@ public class SaleListService {
         return wishlistCategoryAverages;
     }
 
+    // change count of each category in wishlist to a scale of 0-5 for even combination with my orders ratings (also 0-5)
     private HashMap<String, Double> getWishlistAverages(HashMap<String, Integer> wishlistCategoryTotals, int length) {
         HashMap<String, Double> wishlistCategoryAverages = new HashMap<>();
 
