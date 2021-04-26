@@ -4,9 +4,9 @@ import org.json.simple.JSONArray;
 
 public class SaleList {
 
-    private Long id;
     private Long userId;
     private JSONArray hotDeals;
+    private JSONArray recommendedProducts;
 
     public JSONArray getRecommendedProducts() {
         return recommendedProducts;
@@ -16,8 +16,6 @@ public class SaleList {
         this.recommendedProducts = recommendedProducts;
     }
 
-    private JSONArray recommendedProducts;
-
     public JSONArray getHotDeals() {
         return hotDeals;
     }
@@ -26,33 +24,10 @@ public class SaleList {
         this.hotDeals = hotDeals;
     }
 
-    public SaleList(Long id, Long userId, JSONArray recommendedProducts) {
-        this.id = id;
-        this.userId = userId;
-        this.recommendedProducts = recommendedProducts;
-    }
-
-    public SaleList(Long userId, JSONArray recommendedProducts) {
-        this.userId = userId;
-        this.recommendedProducts = recommendedProducts;
-    }
-
-    public SaleList(long id, long userId, JSONArray hotDeals, JSONArray recommendedProducts) {
-        this.id = id;
+    public SaleList(long userId, JSONArray hotDeals, JSONArray recommendedProducts) {
         this.userId = userId;
         this.hotDeals = hotDeals;
         this.recommendedProducts = recommendedProducts;
-    }
-
-//    public SaleList(long id, long userId) {
-//    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Long getUserId() {
@@ -66,8 +41,7 @@ public class SaleList {
     @Override
     public String toString() {
         return "SaleList{" +
-                "id=" + id +
-                ", userId=" + userId +
+                "userId=" + userId +
                 ", hotDeals=" + hotDeals +
                 ", recommendedProducts=" + recommendedProducts +
                 '}';

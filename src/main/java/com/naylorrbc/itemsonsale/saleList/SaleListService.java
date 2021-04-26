@@ -44,7 +44,6 @@ public class SaleListService {
         JSONArray recommendedProducts = getRecommendations(sortedCategories, saleProducts);
 
         SaleList saleList = new SaleList(
-                1L,
                 userId.longValue(),
                 hotDeals,
                 recommendedProducts);
