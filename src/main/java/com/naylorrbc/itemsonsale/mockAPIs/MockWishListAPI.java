@@ -22,8 +22,6 @@ public class MockWishListAPI {
             case 2:
                 filePath = "src/main/java/com/naylorrbc/itemsonsale/mockAPIs/wishlist_mock_payload_2.json";
                 break;
-            case 3:
-                break;
         }
 
         try (FileReader reader = new FileReader(filePath))
